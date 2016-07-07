@@ -25,15 +25,11 @@ namespace UnityStandardAssets.CrossPlatformInput
 		CrossPlatformInputManager.VirtualAxis m_HorizontalVirtualAxis; // Reference to the joystick in the cross platform input
 		CrossPlatformInputManager.VirtualAxis m_VerticalVirtualAxis; // Reference to the joystick in the cross platform input
 
-		void OnEnable()
+		void Start()
 		{
+			m_StartPos = transform.position;
 			CreateVirtualAxes();
 		}
-
-        void Start()
-        {
-            m_StartPos = transform.position;
-        }
 
 		void UpdateVirtualAxes(Vector3 value)
 		{
